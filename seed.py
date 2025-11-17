@@ -1,10 +1,10 @@
 
 import json
-from ulid import ULID
+import uuid
 from models import make_session, Statement, Edge, Container, ContainerStatement
 
 def uid(prefix):
-    return f"{prefix}-{str(ULID())}"
+    return f"{prefix}-{uuid.uuid4().hex}"
 
 db = make_session("sqlite:///kg.db")
 
