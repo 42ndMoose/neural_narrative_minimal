@@ -12,7 +12,7 @@ from models import make_session, Statement, Edge, Container, ContainerStatement
 
 app = FastAPI(title="Neural Narrative (Minimal)")
 app.mount("/static", StaticFiles(directory="static_files"), name="static")
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="tpl")
 
 def session():
     return make_session("sqlite:///kg.db")
