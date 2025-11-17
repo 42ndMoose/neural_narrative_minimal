@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title if title else "Neural Narrative" }}</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="brand"><a href="/">Neural Narrative</a></h1>
+      <nav>
+        <a href="/">Containers</a>
+        <a href="#" onclick="toggleHelp();return false;">Help</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>Built for atomic narratives • LLM-friendly by design</small>
+    </div>
+  </footer>
+  <script>
+    function toggleHelp(){
+      alert("Each statement is atomic and typed. Relations (supports, contradicts, depends_on, summarizes) are explicit. Use the default path to read as an article.");
+    }
+  </script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
