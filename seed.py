@@ -148,6 +148,15 @@ sup("S1.1","S1.0"); sup("S1.2","S1.0"); sup("S1.3","S1.0")
 # Section 2 links
 for k in ["S2.1","S2.2","S2.3","S2.4"]:
     sup(k,"S2.0")
+# Extra Section 2 edges
+
+# Mid-level summary supports the main takeaway
+sup("S2.5", "S2.0")
+
+# Index-fund / stewardship details support the summary
+sup("S2.6", "S2.5")
+sup("S2.7", "S2.5")
+sup("S2.8", "S2.5")
 
 # Section 3 links
 for k in ["S3.1","S3.2","S3.3"]:
