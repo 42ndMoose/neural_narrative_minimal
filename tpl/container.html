@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+  <h2>{{ container.title }}</h2>
+  {% if container.intro %}<p class="lead">{{ container.intro }}</p>{% endif %}
+
+  <aside class="meta">
+    {% if root_ids %}
+    <div><strong>Roots:</strong> {{ ", ".join(root_ids) }}</div>
+    {% endif %}
+    <div><strong>Path length:</strong> {{ statements|length }}</div>
+  </aside>
+
+  <section class="article">
+    {% for s in statements %}
+    <section class="stmt"
+      data-stmt-id="{{ s.id }}"
+      data-type="{{ s.type }}"
+      data-scope="{{ s.scope or '' }}"
+      data-time-as_of="{{ s.time_as_of or '' }}"
+      data-actors='{{ s.actors_json or "[]" }}'
+      data-tags='{{ s.tags_json or "[]" }}'>
+      <a class="permalink" href="/stmt/{{ s.id }}" title="Permalink">#</a>
+      <h4 class="stmt-type">{{ s.type }}</h4>
+      <p class="stmt-text">{{ s.text }}</p>
+      <div class="chips">
+        {% if s.scope %}<span class="chip">Scope: {{ s.scope }}</span>{% endif %}
+        {% if s.time_as_of %}<span class="chip">As of: {{ s.time_as_of }}</span>{% endif %}
+        {% if s.status %}<span class="chip">Status: {{ s.status }}</span>{% endif %}
+      </div>
+      <div class="relations">
+        <details>
+          <summary>Linked statements</summary>
+          <ul>
+          {% for e in all_edges %}
+            {% if e.from_id == s.id %}
+              <li>
+                <span class="rel {{ e.relation }}">{{ e.relation }}</span>
+                <a href="/stmt/{{ e.to_id }}">{{ e.to_id }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </details>
+      </div>
+    </section>
+    {% endfor %}
+  </section>
+
+  <script type="application/json" id="kg">
+    {{ kg_json|safe }}
+  </script>
+</article>
+{% endblock %}
