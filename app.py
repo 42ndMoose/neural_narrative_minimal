@@ -11,7 +11,7 @@ from ulid import ULID
 from models import make_session, Statement, Edge, Container, ContainerStatement
 
 app = FastAPI(title="Neural Narrative (Minimal)")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static_files"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 def session():
