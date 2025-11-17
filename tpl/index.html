@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Containers</h2>
+<ul class="cards">
+  {% for c in containers %}
+  <li class="card">
+    <h3><a href="/c/{{ c.slug }}">{{ c.title }}</a></h3>
+    {% if c.intro %}<p>{{ c.intro }}</p>{% endif %}
+    <code>/c/{{ c.slug }}</code>
+  </li>
+  {% else %}
+  <p>No containers yet. Run <code>python seed.py</code> locally to create some.</p>
+  {% endfor %}
+</ul>
+{% endblock %}
