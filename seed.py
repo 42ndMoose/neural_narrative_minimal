@@ -67,6 +67,24 @@ S_add("S2.2", id="S2.2", text="Disney (ABC/ESPN) has the Big Three among top hol
 S_add("S2.3", id="S2.3", text="Warner Bros. Discovery (CNN) shows significant Big Three holdings.", type="claim")
 S_add("S2.4", id="S2.4", text="Fox Corp uses dual-class; Murdoch trust controls; Big Three are top holders of Class A.", type="claim")
 
+# Section 2 – additional summary + stewardship details
+
+S_add("S2.5", id="S2.5",
+      text="Across the S&P 500, BlackRock and Vanguard are top shareholders in most large U.S. companies, including many media firms.",
+      type="claim")
+
+S_add("S2.6", id="S2.6",
+      text="Because their index funds track big benchmarks like the S&P 500, the Big Three automatically end up holding significant stakes in most large companies.",
+      type="fact")
+
+S_add("S2.7", id="S2.7",
+      text="The Big Three run stewardship teams that vote on boards, executive pay, and resolutions, which gives them board-level influence rather than direct editorial control.",
+      type="explanation")
+
+S_add("S2.8", id="S2.8",
+      text="Their incentives are portfolio-wide: they care more about avoiding legal and regulatory shocks to the whole market than about scripting one outlet’s daily coverage.",
+      type="explanation")
+
 # Section 3
 S_add("S3.0", id="S3.0", text="The asset-management layer ties directly into WEF governance.", type="takeaway")
 S_add("S3.1", id="S3.1", text="BlackRock is a WEF strategic partner; Larry Fink co-chairs the WEF board.", type="claim", actors=["BlackRock","WEF","Larry Fink"])
